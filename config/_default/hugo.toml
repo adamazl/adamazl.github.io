@@ -1,4 +1,4 @@
-baseURL = "https://adamazl.github.io/"
+baseURL = "/"
 languageCode = "en-us"
 title = "The Home Lab"
 theme = "congo"
