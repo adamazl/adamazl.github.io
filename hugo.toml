@@ -1,3 +1,94 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Project'
+baseURL = "https://YOUR-GITHUB-USERNAME.github.io/"
+languageCode = "en-us"
+title = "The Home Lab"
+theme = "PaperMod"
+paginate = 10
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[params]
+  env = "production"
+  title = "The Home Lab"
+  description = "Adventures in homelabbing, self-hosting, and home networking."
+  author = "Your Name"
+  # profileMode shows a landing page with a bio instead of a plain post list
+  [params.profileMode]
+    enabled = true
+    title = "The Home Lab"
+    subtitle = "Adventures in homelabbing, self-hosting, and home networking."
+    imageUrl = "images/avatar.png"
+    imageWidth = 120
+    imageHeight = 120
+    [[params.profileMode.buttons]]
+      name = "Posts"
+      url = "/posts"
+    [[params.profileMode.buttons]]
+      name = "Tags"
+      url = "/tags"
+
+  [params.homeInfoParams]
+    Title = "The Home Lab"
+    Content = "Adventures in homelabbing, self-hosting, and home networking."
+
+  # Social icons shown in footer
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/YOUR-GITHUB-USERNAME"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+  [params.assets]
+    disableHLJS = false  # syntax highlighting for code blocks
+
+  showReadingTime = true
+  showShareButtons = false
+  showPostNavLinks = true
+  showBreadCrumbs = true
+  showCodeCopyButtons = true
+  showWordCount = true
+  showToc = true
+  tocOpen = false
+  defaultTheme = "auto"   # auto follows OS dark/light preference
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 20
+  [[menu.main]]
+    identifier = "series"
+    name = "Series"
+    url = "/series/"
+    weight = 30
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true   # allow raw HTML in markdown (useful for diagrams/embeds)
+  [markup.highlight]
+    noClasses = false
+    anchorLineNos = true
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    style = "monokai"
