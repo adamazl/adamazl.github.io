@@ -3,7 +3,7 @@ title: "VLAN Segmentation: Isolating Your IoT Devices"
 date: 2026-03-05
 draft: false
 description: "A practical guide to segmenting your home network with VLANs to keep IoT devices away from your trusted machines."
-tags: ["networking", "vlan", "security", "iot", "firewall"]
+tags: ["vlan", "security", "iot", "firewall"]
 categories: ["Networking"]
 series: ["Home Network Build"]
 showToc: true

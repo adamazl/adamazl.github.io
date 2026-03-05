@@ -5,7 +5,7 @@
 
 [[main]]
   name = "Search"
-  pageRef = "search"
+  action = "search"
   weight = 20
 
 [[main]]

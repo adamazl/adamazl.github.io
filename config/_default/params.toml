@@ -1,8 +1,10 @@
 colorScheme = "congo"   # built-in: congo, avocado, ocean, fire, slate, violet, rose, pink
 defaultAppearance = "dark"
 autoSwitchAppearance = true
+enableSearch = true
 
 description = "Adventures in homelabbing, self-hosting, and home networking."
+images = ["images/avatar.png"]
 
 [homepage]
   layout = "profile"     # profile page with avatar + bio
@@ -12,6 +14,7 @@ description = "Adventures in homelabbing, self-hosting, and home networking."
   showMoreLink = true
   showMoreLinkDest = "/posts"
   cardView = true
+  showSummary = true
 
 [author]
   name = "Adam Aizal"
@@ -39,6 +42,7 @@ description = "Adventures in homelabbing, self-hosting, and home networking."
   showBreadcrumbs = true
   groupByYear = false
   cardView = true
+  showSummary = true
 
 [taxonomy]
   showTermCount = true

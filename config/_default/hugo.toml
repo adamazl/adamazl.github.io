@@ -5,6 +5,7 @@ theme = "congo"
 paginate = 10
 
 enableRobotsTXT = true
+enableGitInfo = true    # use Git commit timestamps for lastmod in sitemap
 buildDrafts = false
 buildFuture = false
 buildExpired = false
@@ -12,3 +13,7 @@ buildExpired = false
 # Required for search
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5

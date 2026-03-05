@@ -2,6 +2,11 @@
 title: "About"
 date: 2026-03-05
 draft: false
+showDate: false
+showReadingTime: false
+showWordCount: false
+showAuthor: false
+showPagination: false
 ---
 
 ## About This Blog
