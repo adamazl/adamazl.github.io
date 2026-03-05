@@ -23,27 +23,28 @@ body {
 }
 
 /* --- Sticky frosted-glass nav --------------------------- */
-header.header {
+body > div > header:first-of-type {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(15, 23, 42, 0.8) !important;
+    background: rgba(15, 23, 42, 0.85) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 /* --- Post/article cards: bordered with hover lift -------- */
-.mt-article,
-article.grid {
+#main-content section article,
+article.mt-6 {
     border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 12px;
+    padding: 1.25rem;
     background: rgba(255, 255, 255, 0.02);
     transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.mt-article:hover,
-article.grid:hover {
+#main-content section article:hover,
+article.mt-6:hover {
     border-color: rgba(34, 211, 238, 0.35);
     transform: translateY(-3px);
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
@@ -116,6 +117,7 @@ pre::before {
 }
 
 /* --- Headings: slight gradient --------------------------- */
+article h1,
 .prose h1,
 .prose h2,
 .prose h3 {

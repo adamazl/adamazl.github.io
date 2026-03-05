@@ -2,6 +2,8 @@
 title: "About"
 date: 2026-03-05
 draft: false
+description: "Where I document my homelab journey — hardware, networking, self-hosting, and everything in between."
+summary: "Where I document my homelab journey — hardware, networking, self-hosting, and everything in between."
 showDate: false
 showReadingTime: false
 showWordCount: false
