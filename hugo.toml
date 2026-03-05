@@ -1,4 +1,4 @@
-baseURL = "https://YOUR-GITHUB-USERNAME.github.io/"
+baseURL = "https://adamazl.github.io/"
 languageCode = "en-us"
 title = "The Home Lab"
 theme = "PaperMod"
@@ -13,7 +13,7 @@ buildExpired = false
   env = "production"
   title = "The Home Lab"
   description = "Adventures in homelabbing, self-hosting, and home networking."
-  author = "Your Name"
+  author = "Adam Aizal"
   # profileMode shows a landing page with a bio instead of a plain post list
   [params.profileMode]
     enabled = true
@@ -36,7 +36,7 @@ buildExpired = false
   # Social icons shown in footer
   [[params.socialIcons]]
     name = "github"
-    url = "https://github.com/YOUR-GITHUB-USERNAME"
+    url = "https://github.com/adamazl"
   [[params.socialIcons]]
     name = "rss"
     url = "/index.xml"
