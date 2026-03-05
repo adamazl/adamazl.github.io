@@ -9,9 +9,12 @@ body,
 }
 
 /* --- Background: layered slate, not flat black ----------- */
-body {
+html {
     background: linear-gradient(160deg, #0f172a 0%, #1e293b 100%);
     min-height: 100vh;
+}
+body {
+    background: transparent;
 }
 
 /* --- Accent colour: electric cyan ----------------------- */
@@ -117,7 +120,6 @@ pre::before {
 }
 
 /* --- Headings: slight gradient --------------------------- */
-article h1,
 .prose h1,
 .prose h2,
 .prose h3 {
