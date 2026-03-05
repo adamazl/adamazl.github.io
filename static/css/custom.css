@@ -1,0 +1,14 @@
+/* Mobile nav: prevent title wrapping and nav item clipping */
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 1rem;
+    }
+
+    #menu {
+        gap: 8px;
+    }
+
+    #menu a {
+        font-size: 0.85rem;
+    }
+}
