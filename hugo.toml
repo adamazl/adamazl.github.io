@@ -48,7 +48,7 @@ buildExpired = false
   [params.assets]
     disableHLJS = false  # syntax highlighting for code blocks
 
-  showReadingTime = true
+  ShowReadingTime = true
   showShareButtons = false
   showPostNavLinks = true
   showBreadCrumbs = true
@@ -57,6 +57,10 @@ buildExpired = false
   showToc = true
   tocOpen = false
   defaultTheme = "auto"   # auto follows OS dark/light preference
+
+  # Shorter label in the header so mobile nav doesn't overflow
+  [params.label]
+    text = "Home Lab"
 
 [taxonomies]
   category = "categories"
