@@ -915,22 +915,8 @@ hr {
   padding-right: 1.25rem;
 }
 
-/* ---------- 22. Animated gradient background on hero ---------- */
-@keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.profile {
-  background: linear-gradient(
-    135deg,
-    var(--bg) 0%,
-    var(--bg) 60%,
-    var(--accent-glow) 100%
-  );
-  background-size: 200% 200%;
-  animation: gradientShift 8s ease infinite;
-  border-radius: var(--radius);
-  margin-bottom: 2rem;
+/* ---------- 22. Subtle accent glow behind hero text ---------- */
+.profile h1,
+.profile-title {
+  text-shadow: 0 0 40px var(--accent-glow);
 }
