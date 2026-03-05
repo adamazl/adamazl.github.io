@@ -47,7 +47,6 @@ buildExpired = false
 
   [params.assets]
     disableHLJS = false  # syntax highlighting for code blocks
-    customCSS = ["css/custom.css"]
 
   ShowReadingTime = true
   showShareButtons = false
