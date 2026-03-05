@@ -9,6 +9,10 @@ buildDrafts = false
 buildFuture = false
 buildExpired = false
 
+# Required for search (Fuse.js)
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [params]
   env = "production"
   title = "The Home Lab"
@@ -66,20 +70,15 @@ buildExpired = false
     url = "/posts/"
     weight = 10
   [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
+    identifier = "search"
+    name = "Search"
+    url = "/search/"
     weight = 20
-  [[menu.main]]
-    identifier = "series"
-    name = "Series"
-    url = "/series/"
-    weight = 30
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 40
+    weight = 30
 
 [markup]
   [markup.goldmark]
