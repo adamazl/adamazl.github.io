@@ -26,7 +26,12 @@ could run myself, and curiosity about what actually happens when packets travel 
 
 | Device | Role |
 |--------|------|
-| *(your hardware here)* | *(role here)* |
+| TP-Link ER605 | Router / gateway |
+| TP-Link SG2008P | Managed PoE switch |
+| TP-Link OC200 | Omada hardware controller |
+| TP-Link EAP245 | Wi-Fi access point |
+| Proxmox VE × 2 | Compute nodes (virtualisation) |
+| Proxmox PBS | Backup server |
 
 ## What's Coming Next
 

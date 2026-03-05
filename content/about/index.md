@@ -19,6 +19,13 @@ Topics covered here include:
 
 ## The Setup
 
-*Update this section with your actual gear.*
+| Device | Role |
+|--------|------|
+| TP-Link ER605 | Router / gateway |
+| TP-Link SG2008P | Managed PoE switch |
+| TP-Link OC200 | Omada hardware controller |
+| TP-Link EAP245 | Wi-Fi access point |
+| Proxmox VE × 2 | Compute nodes (virtualisation) |
+| Proxmox PBS | Backup server |
 
 Feel free to reach out via [GitHub](https://github.com/adamazl).
