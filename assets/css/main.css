@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: #0f172a;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* TOC links */
+  #TableOfContents ul {
+    @apply list-none pl-4 space-y-1;
+  }
+  #TableOfContents a {
+    @apply text-slate-400 hover:text-accent-400 transition-colors no-underline text-sm;
+  }
+
+  /* Syntax highlight wrapper */
+  .highlight {
+    @apply rounded-xl overflow-hidden my-6;
+  }
+  .highlight pre {
+    @apply p-5 overflow-x-auto text-sm leading-relaxed;
+  }
+  .highlight .ln {
+    @apply select-none pr-4 text-slate-600;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-150;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-accent-500 to-blue-600 text-white shadow-lg shadow-accent-500/20
+           hover:from-accent-400 hover:to-blue-500 hover:shadow-accent-400/30 hover:-translate-y-px;
+  }
+  .btn-ghost {
+    @apply btn border border-slate-700 text-slate-300 hover:border-accent-500/50 hover:bg-slate-800/60 hover:text-accent-400;
+  }
+  .tag-pill {
+    @apply rounded-full border border-accent-500/30 bg-accent-500/10 px-3 py-0.5
+           text-xs font-semibold uppercase tracking-wide text-accent-400
+           hover:border-accent-400/50 hover:bg-accent-500/20 transition-all;
+  }
+  .card {
+    @apply rounded-xl border border-slate-800 bg-slate-900/50 transition-all duration-200
+           hover:border-accent-500/30 hover:bg-slate-900 hover:-translate-y-0.5
+           hover:shadow-lg hover:shadow-slate-950/50;
+  }
+}

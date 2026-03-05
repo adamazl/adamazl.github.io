@@ -1,67 +1,26 @@
-baseURL = "https://adamazl.github.io/"
+baseURL = "/"
 languageCode = "en-us"
 title = "The Home Lab"
-theme = "PaperMod"
 paginate = 10
 
 enableRobotsTXT = true
+enableGitInfo = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
 
-# Required for search (Fuse.js)
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-
 [params]
-  env = "production"
-  title = "The Home Lab"
   description = "Adventures in homelabbing, self-hosting, and home networking."
   author = "Adam Aizal"
-  # profileMode shows a landing page with a bio instead of a plain post list
-  [params.profileMode]
-    enabled = true
-    title = "The Home Lab"
-    subtitle = "Adventures in homelabbing, self-hosting, and home networking."
-    imageUrl = "images/avatar.png"
-    imageWidth = 120
-    imageHeight = 120
-    [[params.profileMode.buttons]]
-      name = "Posts"
-      url = "/posts"
-    [[params.profileMode.buttons]]
-      name = "Tags"
-      url = "/tags"
+  avatarUrl = "images/avatar.png"
 
-  [params.homeInfoParams]
-    Title = "The Home Lab"
-    Content = "Adventures in homelabbing, self-hosting, and home networking."
-
-  # Social icons shown in footer
-  [[params.socialIcons]]
-    name = "github"
+  [[params.social]]
+    name = "GitHub"
     url = "https://github.com/adamazl"
-  [[params.socialIcons]]
-    name = "rss"
-    url = "/index.xml"
-
-  [params.assets]
-    disableHLJS = false  # syntax highlighting for code blocks
-    customCSS = ["css/custom.css"]
-
-  ShowReadingTime = true
-  showShareButtons = false
-  showPostNavLinks = true
-  showBreadCrumbs = true
-  showCodeCopyButtons = true
-  showWordCount = true
-  showToc = true
-  tocOpen = false
-  defaultTheme = "auto"   # auto follows OS dark/light preference
 
 [taxonomies]
-  category = "categories"
   tag = "tags"
+  category = "categories"
   series = "series"
 
 [menu]
@@ -71,9 +30,9 @@ buildExpired = false
     url = "/posts/"
     weight = 10
   [[menu.main]]
-    identifier = "search"
-    name = "Search"
-    url = "/search/"
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
     weight = 20
   [[menu.main]]
     identifier = "about"
@@ -84,11 +43,15 @@ buildExpired = false
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true   # allow raw HTML in markdown (useful for diagrams/embeds)
+      unsafe = true
   [markup.highlight]
-    noClasses = false
-    anchorLineNos = true
+    noClasses = true
     codeFences = true
     guessSyntax = true
-    lineNos = true
-    style = "monokai"
+    lineNos = false
+    style = "dracula"
+    tabWidth = 2
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5

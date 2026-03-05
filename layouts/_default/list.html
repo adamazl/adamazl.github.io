@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="mx-auto max-w-5xl px-6 py-16">
+
+  <div class="mb-10">
+    <h1 class="text-3xl font-bold text-slate-100">{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="mt-2 text-slate-400">{{ . }}</p>
+    {{ end }}
+  </div>
+
+  {{ if .Pages }}
+  <div class="space-y-4">
+    {{ range .Pages }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+  {{ else }}
+  <p class="text-slate-500">No posts yet.</p>
+  {{ end }}
+
+  <!-- Pagination -->
+  {{ if .Paginator }}
+  {{ if gt .Paginator.TotalPages 1 }}
+  <nav class="mt-12 flex items-center justify-center gap-2">
+    {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}" class="btn-ghost">← Newer</a>
+    {{ end }}
+    <span class="text-sm text-slate-500">
+      Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
+    </span>
+    {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}" class="btn-ghost">Older →</a>
+    {{ end }}
+  </nav>
+  {{ end }}
+  {{ end }}
+
+</div>
+{{ end }}
