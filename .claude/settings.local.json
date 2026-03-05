@@ -11,7 +11,9 @@
       "Bash(git commit -m \"Initial Hugo site scaffold\")",
       "Bash(git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod)",
       "Bash(hugo --minify)",
-      "Bash(git add -A)"
+      "Bash(git add -A)",
+      "Bash(git commit:*)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }
