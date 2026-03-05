@@ -1,0 +1,14 @@
+baseURL = "https://adamazl.github.io/"
+languageCode = "en-us"
+title = "The Home Lab"
+theme = "congo"
+paginate = 10
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+# Required for search
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

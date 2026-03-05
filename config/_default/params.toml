@@ -1,0 +1,48 @@
+colorScheme = "congo"   # built-in: congo, avocado, ocean, fire, slate, violet, rose, pink
+defaultAppearance = "dark"
+autoSwitchAppearance = true
+
+description = "Adventures in homelabbing, self-hosting, and home networking."
+
+[homepage]
+  layout = "profile"     # profile page with avatar + bio
+  homepageImage = "images/avatar.png"
+  showRecent = true
+  showRecentItems = 5
+  showMoreLink = true
+  showMoreLinkDest = "/posts"
+  cardView = true
+
+[author]
+  name = "Adam Aizal"
+  image = "images/avatar.png"
+  headline = "Homelab enthusiast"
+  bio = "Building and breaking things in my homelab — networking, self-hosting, and everything in between."
+  links = [
+    { github = "https://github.com/adamazl" },
+    { rss = "/index.xml" },
+  ]
+
+[article]
+  showDate = true
+  showDateUpdated = false
+  showAuthor = true
+  showReadingTime = true
+  showWordCount = true
+  showTableOfContents = true
+  showTaxonomies = true
+  showEdit = false
+  seriesOpened = true
+
+[list]
+  showCards = true
+  showBreadcrumbs = true
+  groupByYear = false
+  cardView = true
+
+[taxonomy]
+  showTermCount = true
+  cardView = true
+
+[sitemap]
+  excludedKinds = []
