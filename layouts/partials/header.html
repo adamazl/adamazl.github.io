@@ -1,0 +1,21 @@
+<header class="sticky top-0 z-50 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-md">
+  <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+
+    <a href="{{ "/" | relURL }}"
+       class="flex items-center gap-2 text-base font-bold tracking-tight text-white transition-colors hover:text-accent-400">
+      <span class="text-accent-400">&gt;_</span>
+      {{ site.Title }}
+    </a>
+
+    <div class="flex items-center gap-1">
+      {{ range site.Menus.main }}
+      <a href="{{ .URL }}"
+         class="rounded-md px-3 py-1.5 text-sm font-medium transition-colors
+                {{ if $.IsMenuCurrent "main" . }}text-accent-400 bg-slate-800{{ else }}text-slate-400 hover:bg-slate-800/70 hover:text-slate-100{{ end }}">
+        {{ .Name }}
+      </a>
+      {{ end }}
+    </div>
+
+  </nav>
+</header>

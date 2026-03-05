@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="mx-auto max-w-5xl px-6 py-16">
+
+  <div class="mb-10">
+    <a href="{{ .Parent.Permalink }}"
+       class="mb-3 inline-block text-sm text-slate-500 transition-colors hover:text-slate-400">
+      ← All {{ .Parent.Title | lower }}
+    </a>
+    <h1 class="text-3xl font-bold text-slate-100">
+      <span class="text-accent-400">#</span>{{ .Title }}
+    </h1>
+    <p class="mt-2 text-sm text-slate-500">
+      {{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }}
+    </p>
+  </div>
+
+  <div class="space-y-4">
+    {{ range .Pages }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}

@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="mx-auto max-w-5xl px-6 py-16">
+
+  <div class="mb-10">
+    <h1 class="text-3xl font-bold text-slate-100">{{ .Title | title }}</h1>
+    <p class="mt-2 text-sm text-slate-500">{{ len .Data.Terms }} {{ .Data.Plural }}</p>
+  </div>
+
+  <div class="flex flex-wrap gap-3">
+    {{ range .Data.Terms.Alphabetical }}
+    <a href="{{ .Page.Permalink }}"
+       class="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-4 py-2
+              text-sm font-medium text-slate-300 transition-all
+              hover:border-accent-500/40 hover:bg-slate-800 hover:text-accent-400">
+      <span>{{ .Page.Title }}</span>
+      <span class="rounded-full bg-slate-800 px-2 py-0.5 text-xs text-slate-500">{{ .Count }}</span>
+    </a>
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}

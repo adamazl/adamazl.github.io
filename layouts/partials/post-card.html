@@ -1,0 +1,25 @@
+<article class="card p-6">
+  <!-- Meta row -->
+  <div class="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+    <time class="text-xs text-slate-500" datetime="{{ .Date.Format "2006-01-02" }}">
+      {{ .Date.Format "Jan 2, 2006" }}
+    </time>
+    {{ if .ReadingTime }}
+    <span class="text-slate-700">·</span>
+    <span class="text-xs text-slate-500">{{ .ReadingTime }} min read</span>
+    {{ end }}
+    {{ range .Params.tags }}
+    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>
+    {{ end }}
+  </div>
+
+  <!-- Title -->
+  <h2 class="mb-2 text-lg font-semibold leading-snug text-slate-100 transition-colors group-hover:text-accent-400">
+    <a href="{{ .Permalink }}" class="hover:text-accent-400 transition-colors">{{ .Title }}</a>
+  </h2>
+
+  <!-- Summary -->
+  {{ with .Params.summary | default .Params.description }}
+  <p class="text-sm leading-relaxed text-slate-400">{{ . }}</p>
+  {{ end }}
+</article>

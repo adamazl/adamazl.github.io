@@ -1,0 +1,52 @@
+{{ define "main" }}
+<div class="mx-auto max-w-5xl px-6">
+
+  <!-- Hero -->
+  <section class="py-24 text-center">
+    {{ with site.Params.avatarUrl }}
+    <div class="mb-8 flex justify-center">
+      <div class="relative">
+        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-accent-400 to-blue-600 blur-lg opacity-30"></div>
+        <img src="{{ . | relURL }}" alt="{{ site.Params.author }}"
+             class="relative h-24 w-24 rounded-full object-cover ring-2 ring-accent-500/40 ring-offset-4 ring-offset-slate-950">
+      </div>
+    </div>
+    {{ end }}
+
+    <h1 class="mb-3 text-5xl font-bold tracking-tight">
+      <span class="bg-gradient-to-r from-white via-slate-200 to-accent-400 bg-clip-text text-transparent">
+        {{ site.Title }}
+      </span>
+    </h1>
+
+    <p class="mx-auto mb-10 max-w-xl text-lg text-slate-400">
+      {{ site.Params.description }}
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-3">
+      {{ range site.Menus.main }}
+      <a href="{{ .URL }}" class="btn-ghost">{{ .Name }}</a>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- Recent posts -->
+  {{ $posts := where .Site.RegularPages "Section" "posts" }}
+  {{ if $posts }}
+  <section class="pb-24">
+    <div class="mb-6 flex items-center justify-between border-b border-slate-800 pb-4">
+      <h2 class="text-xl font-semibold text-slate-200">Recent Posts</h2>
+      <a href="/posts/" class="text-sm text-accent-400 transition-colors hover:text-accent-300">
+        All posts →
+      </a>
+    </div>
+    <div class="space-y-4">
+      {{ range first 5 $posts }}
+        {{ partial "post-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+</div>
+{{ end }}
