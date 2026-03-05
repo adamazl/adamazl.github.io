@@ -4,8 +4,6 @@
    ============================================================ */
 
 /* ---------- 0. Imports & Custom Properties ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 :root {
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
@@ -96,8 +94,7 @@ a:hover {
 }
 
 /* ---------- 2. Header / Navigation ---------- */
-#top-nav,
-header#top-nav,
+header.header,
 .nav {
   background: var(--bg-nav);
   backdrop-filter: blur(16px) saturate(180%);
@@ -164,7 +161,7 @@ header#top-nav,
   transition: color var(--transition), background var(--transition);
 }
 #menu a:hover,
-#menu a.active {
+#menu a:has(> span.active) {
   color: var(--text);
   background: var(--accent-glow);
 }
@@ -236,7 +233,7 @@ main {
   background-clip: text;
 }
 
-.profile p,
+.profile_inner > span,
 .profile-subtitle {
   color: var(--text-muted);
   font-size: 1rem;

@@ -1,29 +1,4 @@
-{{/* Modern Tailwind + Google Fonts injection */}}
-
-<!-- Google Fonts: Inter (body) + JetBrains Mono (code) -->
+{{/* Google Fonts for custom theme */}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-<!-- Tailwind CSS v3 CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter', 'system-ui', 'sans-serif'],
-          mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-        },
-        colors: {
-          accent: {
-            DEFAULT: '#3b82f6',
-            dark: '#2563eb',
-            light: '#60a5fa',
-          },
-        },
-      },
-    },
-  }
-</script>
