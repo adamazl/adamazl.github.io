@@ -18,6 +18,8 @@ firmware updates, and sometimes outright malicious firmware from vendors.
 Putting them on the same flat network as your laptop and NAS is an unnecessary risk. VLANs fix
 this.
 
+<!--more-->
+
 ## What Is a VLAN?
 
 A **Virtual LAN (VLAN)** is a logical partition of a physical network. Devices on different VLANs

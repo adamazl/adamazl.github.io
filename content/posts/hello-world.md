@@ -14,6 +14,8 @@ showToc: true
 Every homelab starts somewhere. Mine started with the frustration of paying for cloud services I
 could run myself, and curiosity about what actually happens when packets travel across a network.
 
+<!--more-->
+
 ## Current Goals
 
 1. **Full network segmentation** — IoT devices on their own VLAN, completely isolated from the

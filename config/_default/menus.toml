@@ -4,11 +4,6 @@
   weight = 10
 
 [[main]]
-  name = "Search"
-  action = "search"
-  weight = 20
-
-[[main]]
   name = "About"
   pageRef = "about"
-  weight = 30
+  weight = 20
