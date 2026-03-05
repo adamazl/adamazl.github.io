@@ -21,4 +21,4 @@ Topics covered here include:
 
 *Update this section with your actual gear.*
 
-Feel free to reach out via [GitHub](https://github.com/YOUR-GITHUB-USERNAME).
+Feel free to reach out via [GitHub](https://github.com/adamazl).
