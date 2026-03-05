@@ -1,0 +1,155 @@
+/* ============================================================
+   The Home Lab — Tailscale-inspired dark theme
+   ============================================================ */
+
+/* --- Typography ------------------------------------------ */
+body,
+.prose {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* --- Background: layered slate, not flat black ----------- */
+body {
+    background: linear-gradient(160deg, #0f172a 0%, #1e293b 100%);
+    min-height: 100vh;
+}
+
+/* --- Accent colour: electric cyan ----------------------- */
+:root {
+    --color-primary-300: #67e8f9;
+    --color-primary-400: #22d3ee;
+    --color-primary-500: #06b6d4;
+    --color-primary-600: #0891b2;
+}
+
+/* --- Sticky frosted-glass nav --------------------------- */
+header.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(15, 23, 42, 0.8) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* --- Post/article cards: bordered with hover lift -------- */
+.mt-article,
+article.grid {
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mt-article:hover,
+article.grid:hover {
+    border-color: rgba(34, 211, 238, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Tag / taxonomy pills -------------------------------- */
+a[href*="/tags/"],
+a[href*="/categories/"] {
+    background: rgba(34, 211, 238, 0.1) !important;
+    color: #22d3ee !important;
+    border: 1px solid rgba(34, 211, 238, 0.25) !important;
+    border-radius: 9999px !important;
+    padding: 2px 10px !important;
+    font-size: 0.7rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+a[href*="/tags/"]:hover,
+a[href*="/categories/"]:hover {
+    background: rgba(34, 211, 238, 0.2) !important;
+    box-shadow: 0 0 12px rgba(34, 211, 238, 0.3);
+}
+
+/* --- Code blocks: terminal style with gradient top bar --- */
+pre {
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 10px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+pre::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, #22d3ee, #3b82f6, #a855f7);
+    margin-bottom: 1rem;
+}
+
+/* --- Inline code ----------------------------------------- */
+.prose code:not(pre code) {
+    background: rgba(34, 211, 238, 0.1);
+    color: #67e8f9;
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 0.85em;
+}
+
+/* --- TOC: cyan left border ------------------------------- */
+#TableOfContents,
+.toc {
+    border-left: 2px solid rgba(34, 211, 238, 0.4);
+    padding-left: 1rem;
+}
+
+/* --- Links: cyan accent with glow on hover --------------- */
+.prose a {
+    color: #22d3ee;
+    text-decoration: none;
+    transition: color 0.15s ease, text-shadow 0.15s ease;
+}
+
+.prose a:hover {
+    color: #67e8f9;
+    text-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+}
+
+/* --- Headings: slight gradient --------------------------- */
+.prose h1,
+.prose h2,
+.prose h3 {
+    background: linear-gradient(135deg, #f1f5f9 60%, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* --- Tables: clean bordered style ----------------------- */
+.prose table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.prose thead tr {
+    border-bottom: 2px solid rgba(34, 211, 238, 0.4);
+}
+
+.prose tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: background 0.15s ease;
+}
+
+.prose tbody tr:hover {
+    background: rgba(34, 211, 238, 0.05);
+}
+
+/* --- Profile avatar: cyan ring -------------------------- */
+img[src*="avatar"] {
+    box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.5), 0 0 20px rgba(34, 211, 238, 0.2);
+}
+
+/* --- Footer --------------------------------------------- */
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}

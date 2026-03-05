@@ -3,6 +3,7 @@ title: "VLAN Segmentation: Isolating Your IoT Devices"
 date: 2026-03-05
 draft: false
 description: "A practical guide to segmenting your home network with VLANs to keep IoT devices away from your trusted machines."
+summary: "Your smart bulbs and cameras shouldn't be on the same network as your laptop and NAS. VLANs are the fix — here's how to design a segmented home network from scratch."
 tags: ["vlan", "security", "iot", "firewall"]
 categories: ["Networking"]
 series: ["Home Network Build"]
@@ -17,8 +18,6 @@ firmware updates, and sometimes outright malicious firmware from vendors.
 
 Putting them on the same flat network as your laptop and NAS is an unnecessary risk. VLANs fix
 this.
-
-<!--more-->
 
 ## What Is a VLAN?
 

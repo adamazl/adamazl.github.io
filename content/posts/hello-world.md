@@ -3,6 +3,7 @@ title: "Hello, Homelab"
 date: 2026-03-05
 draft: false
 description: "Kicking off the blog with an overview of my homelab goals and current setup."
+summary: "Every homelab starts somewhere. Mine started with the frustration of paying for cloud services I could run myself, and curiosity about what actually happens when packets travel across a network."
 tags: ["homelab", "intro", "self-hosting"]
 categories: ["General"]
 series: ["Home Network Build"]
@@ -13,8 +14,6 @@ showToc: true
 
 Every homelab starts somewhere. Mine started with the frustration of paying for cloud services I
 could run myself, and curiosity about what actually happens when packets travel across a network.
-
-<!--more-->
 
 ## Current Goals
 
