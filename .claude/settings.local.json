@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(hugo version)",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "Bash(brew install hugo)",
+      "Bash(hugo new site . --force)",
+      "Bash(git init)",
+      "Bash(git add .)",
+      "Bash(git commit -m \"Initial Hugo site scaffold\")"
+    ]
+  }
+}
