@@ -9,7 +9,7 @@
     <span class="text-xs text-slate-500">{{ .ReadingTime }} min read</span>
     {{ end }}
     {{ range .Params.tags }}
-    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>
+    <a href="{{ site.Home.RelPermalink }}tags/{{ . | urlize }}/" class="tag-pill">{{ . }}</a>
     {{ end }}
   </div>
 

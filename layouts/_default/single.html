@@ -4,7 +4,7 @@
 
     <!-- Breadcrumbs -->
     <nav class="mb-6 flex items-center gap-2 text-sm text-slate-600">
-      <a href="{{ "/" | relURL }}" class="transition-colors hover:text-slate-400">Home</a>
+      <a href="{{ site.Home.RelPermalink }}" class="transition-colors hover:text-slate-400">Home</a>
       <span>/</span>
       {{ with .CurrentSection }}
       {{ if not .IsHome }}
@@ -39,7 +39,7 @@
     {{ with .Params.tags }}
     <div class="mb-8 flex flex-wrap gap-2">
       {{ range . }}
-      <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag-pill">{{ . }}</a>
+      <a href="{{ site.Home.RelPermalink }}tags/{{ . | urlize }}/" class="tag-pill">{{ . }}</a>
       {{ end }}
     </div>
     {{ end }}
@@ -48,7 +48,7 @@
     {{ with .Params.series }}
     <div class="mb-8 flex items-center gap-3 rounded-lg border border-accent-500/20 bg-accent-500/5 px-4 py-3">
       <span class="text-xs font-semibold uppercase tracking-wider text-accent-500">Series</span>
-      <a href="{{ "/series/" | relURL }}{{ index . 0 | urlize }}/"
+      <a href="{{ site.Home.RelPermalink }}series/{{ index . 0 | urlize }}/"
          class="text-sm font-medium text-accent-400 hover:text-accent-300 transition-colors">
         {{ index . 0 }} →
       </a>
