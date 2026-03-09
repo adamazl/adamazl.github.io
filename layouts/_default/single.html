@@ -83,14 +83,14 @@
     {{ if not (eq .Params.showPagination false) }}
     {{ if or .PrevInSection .NextInSection }}
     <nav class="mt-14 grid grid-cols-2 gap-4 border-t border-slate-800 pt-10">
-      {{ with .PrevInSection }}
+      {{ with .NextInSection }}
       <a href="{{ .Permalink }}" class="group flex flex-col gap-1 rounded-xl border border-slate-800 bg-slate-900/50 p-4 transition-all hover:border-accent-500/30">
         <span class="text-xs text-slate-600 group-hover:text-slate-500 transition-colors">← Previous</span>
         <span class="text-sm font-medium text-slate-300 group-hover:text-accent-400 transition-colors line-clamp-2">{{ .Title }}</span>
       </a>
       {{ else }}<div></div>{{ end }}
 
-      {{ with .NextInSection }}
+      {{ with .PrevInSection }}
       <a href="{{ .Permalink }}" class="group flex flex-col items-end gap-1 rounded-xl border border-slate-800 bg-slate-900/50 p-4 text-right transition-all hover:border-accent-500/30">
         <span class="text-xs text-slate-600 group-hover:text-slate-500 transition-colors">Next →</span>
         <span class="text-sm font-medium text-slate-300 group-hover:text-accent-400 transition-colors line-clamp-2">{{ .Title }}</span>
