@@ -9,7 +9,7 @@
 
     <div class="flex items-center gap-1">
       {{ range site.Menus.main }}
-      <a href="{{ .URL }}"
+      <a href="{{ .URL | relURL }}"
          class="rounded-md px-3 py-1.5 text-sm font-medium transition-colors
                 {{ if $.IsMenuCurrent "main" . }}text-accent-400 bg-slate-800{{ else }}text-slate-400 hover:bg-slate-800/70 hover:text-slate-100{{ end }}">
         {{ .Name }}

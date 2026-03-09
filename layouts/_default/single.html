@@ -4,7 +4,7 @@
 
     <!-- Breadcrumbs -->
     <nav class="mb-6 flex items-center gap-2 text-sm text-slate-600">
-      <a href="/" class="transition-colors hover:text-slate-400">Home</a>
+      <a href="{{ "/" | relURL }}" class="transition-colors hover:text-slate-400">Home</a>
       <span>/</span>
       {{ with .CurrentSection }}
       {{ if not .IsHome }}
