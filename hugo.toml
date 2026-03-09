@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://adamazl.github.io/homelab/"
 languageCode = "en-us"
 title = "The Home Lab"
 paginate = 10
