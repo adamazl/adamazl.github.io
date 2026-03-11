@@ -4,8 +4,9 @@
   {{- partial "head.html" . -}}
 </head>
 <body class="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased flex flex-col">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-md focus:bg-accent-500 focus:px-4 focus:py-2 focus:text-white focus:text-sm focus:font-medium">Skip to content</a>
   {{- partial "header.html" . -}}
-  <main class="flex-1">
+  <main id="main-content" class="flex-1">
     {{- block "main" . }}{{- end }}
   </main>
   {{- partial "footer.html" . -}}

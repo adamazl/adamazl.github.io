@@ -6,6 +6,8 @@
     <div class="flex items-center gap-5">
       {{ range site.Params.social }}
       <a href="{{ .url }}"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="{{ .name }}"
          class="text-sm text-slate-500 transition-colors hover:text-slate-300">
         {{ .name }}
       </a>
