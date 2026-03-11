@@ -7,9 +7,10 @@
       {{ site.Title }}
     </a>
 
-    <div class="flex items-center gap-1">
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-1">
       {{ range site.Menus.main }}
-      <a href="{{ .URL }}"
+      <a href="{{ .URL | relURL }}"
          class="rounded-md px-3 py-1.5 text-sm font-medium transition-colors
                 {{ if $.IsMenuCurrent "main" . }}text-accent-400 bg-slate-800{{ else }}text-slate-400 hover:bg-slate-800/70 hover:text-slate-100{{ end }}">
         {{ .Name }}
@@ -17,5 +18,49 @@
       {{ end }}
     </div>
 
+    <!-- Hamburger button (mobile only) -->
+    <button id="nav-toggle"
+            class="md:hidden flex flex-col justify-center gap-1.5 p-2 text-slate-400 hover:text-slate-100 transition-colors"
+            aria-label="Toggle menu" aria-expanded="false">
+      <span class="block h-0.5 w-5 bg-current transition-transform" id="bar1"></span>
+      <span class="block h-0.5 w-5 bg-current transition-opacity" id="bar2"></span>
+      <span class="block h-0.5 w-5 bg-current transition-transform" id="bar3"></span>
+    </button>
+
   </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950/95">
+    <div class="mx-auto max-w-5xl px-6 py-4 flex flex-col gap-1">
+      {{ range site.Menus.main }}
+      <a href="{{ .URL | relURL }}"
+         class="rounded-md px-3 py-2 text-sm font-medium transition-colors
+                {{ if $.IsMenuCurrent "main" . }}text-accent-400 bg-slate-800{{ else }}text-slate-400 hover:bg-slate-800/70 hover:text-slate-100{{ end }}">
+        {{ .Name }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
 </header>
+
+<script>
+(function () {
+  var btn = document.getElementById('nav-toggle');
+  var menu = document.getElementById('mobile-menu');
+  var bar1 = document.getElementById('bar1');
+  var bar3 = document.getElementById('bar3');
+  btn.addEventListener('click', function () {
+    var open = menu.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', open);
+    if (open) {
+      bar1.style.transform = 'translateY(7px) rotate(45deg)';
+      bar3.style.transform = 'translateY(-7px) rotate(-45deg)';
+      document.getElementById('bar2').style.opacity = '0';
+    } else {
+      bar1.style.transform = '';
+      bar3.style.transform = '';
+      document.getElementById('bar2').style.opacity = '';
+    }
+  });
+})();
+</script>
