@@ -5,55 +5,10 @@
 </head>
 <body class="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased flex flex-col">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-md focus:bg-accent-500 focus:px-4 focus:py-2 focus:text-white focus:text-sm focus:font-medium">Skip to content</a>
-  {{ if .IsPage }}<div id="reading-progress"></div>{{ end }}
   {{- partial "header.html" . -}}
   <main id="main-content" class="flex-1">
     {{- block "main" . }}{{- end }}
   </main>
   {{- partial "footer.html" . -}}
-  <button id="top-link" aria-label="Back to top">
-    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
-  </button>
-  <script>
-  (function() {
-    // Theme toggle
-    var html = document.documentElement;
-    var stored = localStorage.getItem('theme');
-    var theme = stored || 'dark';
-    html.setAttribute('data-theme', theme);
-    var iconDark = document.getElementById('theme-icon-dark');
-    var iconLight = document.getElementById('theme-icon-light');
-    function updateIcon() {
-      var t = html.getAttribute('data-theme');
-      iconDark.classList.toggle('hidden', t !== 'light');
-      iconLight.classList.toggle('hidden', t !== 'dark');
-    }
-    updateIcon();
-    document.getElementById('theme-toggle').addEventListener('click', function() {
-      var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      updateIcon();
-    });
-
-    // Reading progress
-    var bar = document.getElementById('reading-progress');
-    if (bar) {
-      window.addEventListener('scroll', function() {
-        var h = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.width = h > 0 ? (window.scrollY / h * 100) + '%' : '0%';
-      }, { passive: true });
-    }
-
-    // Back to top
-    var topBtn = document.getElementById('top-link');
-    window.addEventListener('scroll', function() {
-      topBtn.classList.toggle('visible', window.scrollY > 400);
-    }, { passive: true });
-    topBtn.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  })();
-  </script>
 </body>
 </html>
