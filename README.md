@@ -1,13 +1,24 @@
 # The Home Lab
 
-A personal blog about homelabbing, self-hosting, and home networking — built with [Hugo](https://gohugo.io/) and deployed to [GitHub Pages](https://adamazl.github.io/homelab/).
+A personal blog about homelabbing, self-hosting, and home networking — built with [Hugo](https://gohugo.io/) and deployed to GitHub Pages.
+
+**Live site: [adamazl.github.io/homelab](https://adamazl.github.io/homelab/)**
 
 ## Tech Stack
 
 - **Framework:** Hugo (Extended v0.157.0)
-- **Theme:** PaperMod
+- **Theme:** Custom (PaperMod-based)
 - **Styling:** Tailwind CSS
 - **Deployment:** GitHub Actions → GitHub Pages
+
+## Features
+
+- Dark/light mode toggle
+- Full-text search
+- Code blocks with copy buttons
+- Callout/admonition components
+- Table of contents on posts
+- Shadcn-inspired UI
 
 ## Topics Covered
 
@@ -15,9 +26,9 @@ A personal blog about homelabbing, self-hosting, and home networking — built w
 - TrueNAS & ZFS storage
 - Docker & LXC containers
 - Network setup (OPNsense, VLANs, WireGuard, Tailscale)
-- Self-hosted services (Jellyfin, Home Assistant, Pi-hole, Nginx Proxy Manager)
+- Self-hosted services (Jellyfin, Home Assistant, Pi-hole, Nginx Proxy Manager, Immich)
 - Monitoring (Grafana + Prometheus)
-- Backup strategies
+- Backup strategies (Proxmox Backup Server)
 
 ## Local Development
 
