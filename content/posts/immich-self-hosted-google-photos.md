@@ -1,6 +1,6 @@
 ---
 title: "Immich: Your Self-Hosted Google Photos Replacement"
-date: 2026-03-15
+date: 2025-03-15
 tags: ["immich", "photos", "self-hosted", "docker", "storage", "homelab"]
 categories: ["Infrastructure"]
 description: "Set up Immich on your homelab to get Google Photos-style automatic backup, facial recognition, and AI-powered search — with full control over your data."
