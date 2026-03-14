@@ -9,6 +9,9 @@ buildDrafts = false
 buildFuture = false
 buildExpired = false
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [params]
   description = "Adventures in homelabbing, self-hosting, and home networking."
   author = "Adam Aizal"

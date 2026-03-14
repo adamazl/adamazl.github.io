@@ -1,0 +1,178 @@
+<script>
+(function () {
+  // ── Theme toggle ──────────────────────────────────────────────────
+  var toggleBtn = document.getElementById('theme-toggle');
+  var iconSun   = document.getElementById('icon-sun');
+  var iconMoon  = document.getElementById('icon-moon');
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      if (iconSun)  iconSun.style.display  = 'none';
+      if (iconMoon) iconMoon.style.display = '';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (iconSun)  iconSun.style.display  = '';
+      if (iconMoon) iconMoon.style.display = 'none';
+    }
+  }
+
+  // Apply on load
+  applyTheme(localStorage.getItem('theme') || 'dark');
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function () {
+      var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      var next = isLight ? 'dark' : 'light';
+      localStorage.setItem('theme', next);
+      applyTheme(next);
+    });
+  }
+
+  // ── Copy buttons ─────────────────────────────────────────────────
+  var COPY_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>';
+  var CHECK_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+
+  document.querySelectorAll('.highlight').forEach(function (block) {
+    var btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.setAttribute('aria-label', 'Copy code');
+    btn.innerHTML = COPY_ICON;
+    block.appendChild(btn);
+
+    btn.addEventListener('click', function () {
+      var pre = block.querySelector('pre');
+      var text = pre ? pre.innerText : '';
+      navigator.clipboard.writeText(text).then(function () {
+        btn.innerHTML = CHECK_ICON;
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.innerHTML = COPY_ICON;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  });
+
+  // ── Reading progress bar ─────────────────────────────────────────
+  var bar = document.getElementById('reading-progress');
+  if (bar) {
+    function updateProgress() {
+      var article = document.querySelector('article');
+      if (!article) return;
+      var scrollTop    = window.scrollY;
+      var articleTop   = article.getBoundingClientRect().top + scrollTop;
+      var articleH     = article.offsetHeight;
+      var winH         = window.innerHeight;
+      var progress     = Math.max(0, Math.min(1,
+        (scrollTop - articleTop + winH * 0.25) / (articleH - winH * 0.75)
+      ));
+      bar.style.width = (progress * 100) + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  // ── TOC active section ───────────────────────────────────────────
+  var tocLinks = document.querySelectorAll('#toc-sidebar #TableOfContents a, details #TableOfContents a');
+  if (tocLinks.length) {
+    var headings = Array.from(document.querySelectorAll('article h2[id], article h3[id]'));
+
+    function updateToc() {
+      var current = '';
+      headings.forEach(function (h) {
+        if (window.scrollY >= h.getBoundingClientRect().top + window.scrollY - 130) {
+          current = h.id;
+        }
+      });
+      tocLinks.forEach(function (link) {
+        var href = link.getAttribute('href');
+        if (href === '#' + current) {
+          link.classList.add('toc-active');
+        } else {
+          link.classList.remove('toc-active');
+        }
+      });
+    }
+    window.addEventListener('scroll', updateToc, { passive: true });
+    updateToc();
+  }
+
+  // ── Search ───────────────────────────────────────────────────────
+  var searchBtn     = document.getElementById('search-btn');
+  var searchModal   = document.getElementById('search-modal');
+  var searchInput   = document.getElementById('search-input');
+  var searchResults = document.getElementById('search-results');
+
+  if (!searchBtn || !searchModal) return;
+
+  var fuse = null;
+
+  function loadSearch() {
+    if (fuse) return Promise.resolve();
+    var base = (document.querySelector('meta[name="base-url"]') || {}).content || '/';
+    return fetch(base + 'index.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        fuse = new Fuse(data, {
+          keys: ['title', 'description', 'tags', 'content'],
+          threshold: 0.35,
+          includeMatches: true,
+        });
+      })
+      .catch(function (e) { console.warn('Search index failed to load', e); });
+  }
+
+  function openSearch() {
+    searchModal.classList.remove('hidden');
+    searchModal.classList.add('flex');
+    searchInput.focus();
+    loadSearch();
+  }
+
+  function closeSearch() {
+    searchModal.classList.add('hidden');
+    searchModal.classList.remove('flex');
+    searchInput.value = '';
+    searchResults.innerHTML = '';
+  }
+
+  searchBtn.addEventListener('click', openSearch);
+
+  searchModal.addEventListener('click', function (e) {
+    if (e.target === searchModal) closeSearch();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      if (searchModal.classList.contains('hidden')) openSearch();
+      else closeSearch();
+    }
+    if (e.key === 'Escape') closeSearch();
+  });
+
+  searchInput.addEventListener('input', function () {
+    if (!fuse) return;
+    var q = searchInput.value.trim();
+    if (!q) { searchResults.innerHTML = ''; return; }
+    var results = fuse.search(q, { limit: 8 });
+    if (!results.length) {
+      searchResults.innerHTML = '<p style="padding:2rem 1rem;text-align:center;font-size:.875rem;color:#64748b;">No results found.</p>';
+      return;
+    }
+    searchResults.innerHTML = results.map(function (r) {
+      var item = r.item;
+      var tags = (item.tags || []).slice(0, 3).map(function (t) {
+        return '<span style="font-size:10px;padding:1px 6px;border-radius:999px;border:1px solid rgba(6,182,212,.3);color:#22d3ee;margin-right:4px;">' + t + '</span>';
+      }).join('');
+      return '<a href="' + item.url + '" class="search-result-item">'
+        + '<div style="font-size:.875rem;font-weight:500;color:inherit">' + item.title + '</div>'
+        + (tags ? '<div style="margin-top:4px">' + tags + '</div>' : '')
+        + (item.description ? '<div style="font-size:.75rem;color:#64748b;margin-top:2px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">' + item.description + '</div>' : '')
+        + '</a>';
+    }).join('');
+  });
+
+})();
+</script>
