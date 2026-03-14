@@ -1,6 +1,6 @@
 ---
 title: "Installing Proxmox VE"
-date: 2026-03-09
+date: 2025-12-13
 draft: false
 description: "A step-by-step walkthrough of how I installed Proxmox VE on bare metal for my homelab compute nodes."
 tags: ["proxmox", "virtualisation", "homelab", "linux"]

@@ -1,6 +1,6 @@
 ---
 title: "Self-Hosted Media Streaming with Jellyfin"
-date: 2026-03-02
+date: 2026-02-21
 draft: false
 description: "Set up Jellyfin as a self-hosted media server to stream your film and music library to any device."
 tags: ["jellyfin", "media", "streaming", "docker", "homelab"]

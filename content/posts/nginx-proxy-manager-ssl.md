@@ -1,6 +1,6 @@
 ---
 title: "Reverse Proxy and SSL with Nginx Proxy Manager"
-date: 2026-02-10
+date: 2025-11-15
 draft: false
 description: "Using Nginx Proxy Manager to front your self-hosted services with real SSL certificates, custom domain names, and access control — without touching raw Nginx config."
 tags: ["nginx", "reverse-proxy", "ssl", "docker", "homelab", "networking"]

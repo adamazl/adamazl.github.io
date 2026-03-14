@@ -1,6 +1,6 @@
 ---
 title: "Self-Hosted VPN with WireGuard"
-date: 2026-02-05
+date: 2025-11-01
 draft: false
 description: "Set up a WireGuard VPN server on your homelab so you can securely access your network from anywhere."
 tags: ["wireguard", "vpn", "networking", "security", "linux"]

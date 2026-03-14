@@ -1,6 +1,6 @@
 ---
 title: "Setting Up OPNsense as Your Home Firewall"
-date: 2026-02-25
+date: 2025-09-20
 draft: false
 description: "Replace your ISP router with OPNsense for a proper firewall, VLAN support, and full traffic visibility."
 tags: ["opnsense", "firewall", "networking", "homelab", "security"]

@@ -1,6 +1,6 @@
 ---
 title: "ZFS for Homelabbers: Pools, Datasets, and Snapshots"
-date: 2026-03-03
+date: 2026-01-24
 draft: false
 description: "A practical guide to ZFS storage pools, datasets, compression, and snapshots for homelab NAS builds."
 tags: ["zfs", "storage", "nas", "truenas", "linux"]

@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Home Assistant"
-date: 2026-03-04
+date: 2026-03-01
 draft: false
 description: "Set up Home Assistant on Proxmox to automate your smart home devices with full local control."
 tags: ["homeassistant", "smarthome", "automation", "proxmox", "homelab"]

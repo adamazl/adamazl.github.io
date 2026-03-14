@@ -1,6 +1,6 @@
 ---
 title: "Hello, Homelab"
-date: 2026-03-05
+date: 2025-09-06
 draft: false
 description: "Kicking off the blog with an overview of my homelab goals and current setup."
 tags: ["homelab", "intro", "self-hosting"]

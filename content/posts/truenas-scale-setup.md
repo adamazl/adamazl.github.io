@@ -1,6 +1,6 @@
 ---
 title: "Building a Home NAS with TrueNAS Scale"
-date: 2026-02-21
+date: 2026-01-10
 draft: false
 description: "Set up TrueNAS Scale for a home NAS with ZFS storage, SMB shares, and app containers."
 tags: ["truenas", "nas", "zfs", "storage", "homelab"]

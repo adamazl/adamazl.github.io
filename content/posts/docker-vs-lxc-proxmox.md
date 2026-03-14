@@ -1,6 +1,6 @@
 ---
 title: "Docker vs LXC Containers in Proxmox: When to Use Each"
-date: 2026-03-01
+date: 2025-12-27
 draft: false
 description: "Understanding the trade-offs between Docker containers and LXC containers in a Proxmox homelab."
 tags: ["proxmox", "docker", "lxc", "containers", "homelab", "virtualisation"]

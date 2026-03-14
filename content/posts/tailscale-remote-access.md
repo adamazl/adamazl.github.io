@@ -1,6 +1,6 @@
 ---
 title: "Zero-Config Remote Access with Tailscale"
-date: 2026-03-07
+date: 2025-11-29
 draft: false
 description: "Use Tailscale to securely access your homelab from anywhere without port forwarding or a public IP."
 tags: ["tailscale", "vpn", "networking", "remote-access", "wireguard"]

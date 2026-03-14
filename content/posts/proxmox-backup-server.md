@@ -1,6 +1,6 @@
 ---
 title: "Automated Backups with Proxmox Backup Server"
-date: 2026-02-09
+date: 2026-02-07
 draft: false
 description: "Set up Proxmox Backup Server to automate incremental backups of your VMs and LXC containers with deduplication."
 tags: ["proxmox", "backup", "pbs", "homelab", "storage"]

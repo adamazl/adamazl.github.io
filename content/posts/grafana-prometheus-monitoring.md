@@ -1,6 +1,6 @@
 ---
 title: "Homelab Monitoring with Prometheus and Grafana"
-date: 2026-02-17
+date: 2026-03-07
 draft: false
 description: "Build a complete monitoring stack for your homelab using Prometheus for metrics collection and Grafana for dashboards."
 tags: ["grafana", "prometheus", "monitoring", "observability", "docker", "homelab"]

@@ -1,6 +1,6 @@
 ---
 title: "Network-Wide Ad Blocking with Pi-hole"
-date: 2026-02-01
+date: 2025-10-18
 draft: false
 description: "How to set up Pi-hole as your home network's DNS server for ad blocking, custom local DNS, and visibility into what your devices are actually doing."
 tags: ["pihole", "dns", "networking", "raspberry-pi", "homelab"]
